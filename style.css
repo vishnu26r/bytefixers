@@ -1,0 +1,170 @@
+body{
+  background: #EBF5FF;
+}
+.card {
+    perspective: 1000px;
+    width: 600px;
+    height: 400px;
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+  }
+  
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .card-front {
+    transform: rotateY(0deg);
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-back h2 {
+    margin-top: 0;
+  }
+  
+  .card-back p {
+    margin-bottom: 0;
+  }
+  
+  /* button */
+
+  /* button */
+.btn {
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+  color:black;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  }
+  .btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #8CB8FF;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  }
+  /* glow */
+  .btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+  }
+  
+  @keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+  }
+  
+  /* hover */
+  .btn:hover::before {
+  opacity: 1;
+  }
+  
+  .btn:active:after {
+  background: transparent;
+  }
+  
+  .btn:active {
+  color: #000;
+  font-weight: bold;
+  }
+
+  /* carousal */
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    margin: 10px auto;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.images {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.btnn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* mobile nav */
+
+.mobile-menu {
+  display: none; /* Hide the menu by default */
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+  .mobile-menu {
+      display: none; /* Ensure it's hidden on mobile screens initially */
+  }
+}
