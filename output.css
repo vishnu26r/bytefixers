@@ -34,7 +34,30 @@
 6. Use the user's configured `sans` font-variation-settings by default.
 7. Disable tap highlights on iOS
 */
-
+@font-face {
+  font-family: SedanSC;
+  src: url('./FONT/SedanSC-Regular.ttf');
+  
+}
+@font-face {
+  font-family: EduAUVIICWANTHand;
+  src: url('./FONT/EduAUVICWANTHand-VariableFont_wght.ttf');
+  
+}
+@font-face {
+  font-family: Lora;
+  src: url('./FONT/Lora-VariableFont_wght.ttf');
+  
+}
+.FONTS{
+  font-family: SedanSC;
+}
+.FONTS2{
+  font-family: EduAUVIICWANTHand;
+}
+.FONTS3{
+  font-family: Lora;
+}
 html,
 :host {
   line-height: 1.5;
@@ -46,7 +69,8 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"," "; 
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
